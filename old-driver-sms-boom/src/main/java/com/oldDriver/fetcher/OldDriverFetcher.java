@@ -17,7 +17,9 @@ import org.apache.log4j.Logger;
 
 import com.mchange.v1.io.InputStreamUtils;
 import com.oldDriver.util.HttpUtils;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OldDriverFetcher extends DriverFetcher {
     private static final Logger logger = Logger.getLogger(OldDriverFetcher.class);
 

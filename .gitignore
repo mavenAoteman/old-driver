@@ -1,0 +1,12 @@
+*.iml
+.idea/
+*/target
+.project
+.metadata/
+*.class
+*.war
+*.swp
+*/buildNumber.properties
+buildNumber.properties
+config_center_client.log
+MANIFEST.MF
