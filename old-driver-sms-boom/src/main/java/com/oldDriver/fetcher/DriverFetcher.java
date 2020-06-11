@@ -1,10 +1,18 @@
 package com.oldDriver.fetcher;
 
+import com.oldDriver.util.HttpUtils;
+import org.apache.http.client.CookieStore;
+import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.log4j.Logger;
 
 public class DriverFetcher {
     private static final Logger logger = Logger.getLogger(DriverFetcher.class);
-    
+
+    protected CookieStore cookieStore = new BasicCookieStore();
+    public CloseableHttpClient client = HttpUtils.getHttpClient(true, cookieStore);
+
+
     private String phone;
     
     private String userName;

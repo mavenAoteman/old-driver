@@ -23,9 +23,8 @@ import org.springframework.stereotype.Component;
 public class OldDriverFetcher extends DriverFetcher {
     private static final Logger logger = Logger.getLogger(OldDriverFetcher.class);
 
-    protected CookieStore cookieStore = new BasicCookieStore();
 
-    private CloseableHttpClient client = HttpUtils.getHttpClient(true, cookieStore);
+
 
     private static String script1;
 
