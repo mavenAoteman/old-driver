@@ -1002,55 +1002,15 @@ public class HttpUtils {
     }
 
 
-    public static WebDriver getWebDriver() {
-        return getWebDriver(null);
-    }
 
-    public static WebDriver getWebDriver(String useragent) {
-        WebDriver result = null;
-        if (PropertiesUtil.getProps("webdriver").equals("firefox")) {
-            if (useragent != null) {
-                FirefoxProfile firefoxProfile = new FirefoxProfile();
-                firefoxProfile.setPreference("general.useragent.override", useragent);
-                result = new FirefoxDriver(firefoxProfile);
-            } else {
-                result = new FirefoxDriver();
-            }
-
-        } else {
-            // ChromeDriver 使用
-            System.setProperty(PropertiesUtil.getProps("webdriver_lib"),
-                    PropertiesUtil.getProps("webdriver_path"));
-            result = new ChromeDriver();
-        }
-        result.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        return result;
-    }
 
     private static final FirefoxProfile DEFAULT_FIREFOX_PROFILE = new FirefoxProfile();
     static {
         DEFAULT_FIREFOX_PROFILE.setPreference("permissions.default.image", 2);
     }
 
-    public static FirefoxDriver getFirefoxDriver() {
-        return getFirefoxDriver(DEFAULT_FIREFOX_PROFILE);
-    }
 
-    public static FirefoxDriver getFoxDriverForImage(boolean isLoadImage) {
-        if (isLoadImage) {
-            FirefoxProfile firefoxProfile = new FirefoxProfile();
-            firefoxProfile.setPreference("permissions.default.image", 1);
-            return new FirefoxDriver(firefoxProfile);
-        }
-        return getFirefoxDriver(DEFAULT_FIREFOX_PROFILE);
-    }
 
-    public static FirefoxDriver getFirefoxDriver(FirefoxProfile firefoxProfile) {
-        if (firefoxProfile != null) {
-            return new FirefoxDriver(firefoxProfile);
-        }
-        return new FirefoxDriver();
-    }
 
     /**
      * 更换URL中的特殊符号
