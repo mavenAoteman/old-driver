@@ -1,7 +1,7 @@
 package com.oldDriver.pattern.strategy;
 
 /**
- * 请填写类的描述
+ * 策略
  *
  * @author mawenjie12
  * @date 2020-07-06 09:11

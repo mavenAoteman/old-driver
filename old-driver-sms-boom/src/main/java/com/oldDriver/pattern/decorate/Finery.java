@@ -1,7 +1,7 @@
 package com.oldDriver.pattern.decorate;
 
 /**
- * 请填写类的描述
+ * 装饰
  *
  * @author mawenjie12
  * @date 2020-07-01 09:17
