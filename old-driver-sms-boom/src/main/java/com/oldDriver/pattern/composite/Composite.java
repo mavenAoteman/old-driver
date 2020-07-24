@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 请填写类的描述
+ * 组合模式
  *
  * @author mawenjie12
  * @date 2020-07-22 09:49
